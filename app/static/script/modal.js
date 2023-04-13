@@ -71,22 +71,14 @@ $(document).ready(function () {
             type: 'GET',
             url: '/fetch-max-id',
             success: function (res) {
-                let id = 0;
-                if (res.length == 0) {
-                    id = 1;
-                } else {
-                    id = res;
-                    id++;
-                    console.log(id);
-
-                }
+                console.log('success');
 
                 $.ajax({
-                    type: 'POST',
-                    url: '/create',
+                    type: 'GET',
+                    url: '/edit',
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify({
-                        'description': $('#task-modal').find('.form-control').val(),
+                        'description': $('#modal').find('.form-control').val(),
                         'id': id
                     }),
                     success: function (res) {
@@ -94,7 +86,7 @@ $(document).ready(function () {
                         location.reload();
                     },
                     error: function () {
-                        console.log('Error');
+                        console.log('Error Edit Api');
                     }
                 });
 
