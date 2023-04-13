@@ -42,7 +42,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: 'POST',
-                    url: '/create',
+                    url: '/fetch-max-id',
                     contentType: 'application/json;charset=UTF-8',
                     data: JSON.stringify({
                         'description': $('#task-modal').find('.form-control').val(),
